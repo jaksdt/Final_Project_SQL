@@ -1,0 +1,19 @@
+# Query showing aggregation. MIN, MAX, AVERAGE, COUNT
+
+SELECT MIN(rental_duration) AS min_rent_duration,		
+	   MAX(rental_duration) AS max_rent_duration,	
+	   AVG(rental_duration) AS avg_rent_duration,	
+	   COUNT(rental_duration) AS count_rent_duration_values,	
+	   MIN(rental_rate) AS min_rent_rate,	
+	   MAX(rental_rate) AS max_rent_rate,	
+	   AVG(rental_rate) AS avg_rent_rate,	
+	   COUNT(rental_rate) AS count_rent_rate_values,	
+	   MIN(replacement_cost) AS min_replace_cost,	
+	   MAX(replacement_cost) AS max_replace_cost,	
+	   AVG(replacement_cost) AS avg_replace_cost,	
+	   COUNT(replacement_cost) AS count_replace_cost_values,	
+	   MIN(length) AS minimum_length,	
+	   MAX(length) AS maximum_length,	
+	   AVG(length) AS average_length,	
+	   COUNT(length) AS count_length_values,	
+	   COUNT(*) AS count_rows	
