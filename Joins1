@@ -1,0 +1,14 @@
+# Query showing total number of movies per genre and their total sales and rentals
+
+SELECT category.name AS category,	
+              COUNT(DISTINCT film.film_id) as number_of_movies,	
+              COUNT(DISTINCT rental.rental_id) AS rentals_total,	
+              SUM(payment.amount) AS sales_total	
+FROM payment	
+JOIN rental USING(rental_id)	
+JOIN inventory USING(inventory_id)	
+JOIN film USING(film_id)	
+JOIN film_category USING(film_id)	
+JOIN category USING(category_id)	
+GROUP BY category.name	
+ORDER BY sales_total DESC	
