@@ -1,0 +1,20 @@
+# Query showing joining of tables. Displaying top renting customers.
+
+SELECT customer.customer_id,		
+              customer.first_name || ' ' || last_name AS customer_name,		
+              country.country,		
+              city.city,		
+              COUNT(DISTINCT rental.rental_id) AS number_of_rentals,		
+		
+FROM customer		
+INNER JOIN rental USING(customer_id)		
+INNER JOIN payment USING(rental_id)		
+INNER JOIN address USING(address_id)		
+INNER JOIN city USING(city_id)		
+INNER JOIN country USING(country_id)		
+GROUP BY customer.customer_id,		
+                    customer_name,		
+                    country.country,		
+                    city.city		
+ORDER BY SUM(payment.amount) DESC		
+LIMIT 10		
