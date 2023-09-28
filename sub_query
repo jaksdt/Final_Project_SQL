@@ -1,4 +1,4 @@
-# Query showing top 5 Customers with second way of joining tables
+# Sub query also showing 2nd method of joining and displaying top 5 customers in each country.
 
 WITH top_5_customers AS
 (SELECT A.customer_id, A.first_name, A.last_name, C.city, D.country, SUM(E.amount) AS total_amount_paid
